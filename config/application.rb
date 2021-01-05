@@ -22,3 +22,5 @@ module HowGoodSpotify
     # the framework and any gems in your application.
   end
 end
+
+RSpotify::authenticate("dc244f4173ab48bbbff42e71d617c618", "4e40c9fc06f1484caee2405a42d62ea9")
