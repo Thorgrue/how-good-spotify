@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     # Now you can access user's private data, create playlists and much more
 
     # # Access private data
-    # spotify_user.country #=> "US"
+    spotify_user.country #=> "US"
     # spotify_user.email   #=> "example@email.com"
 
     # # Create playlist in user's Spotify account
@@ -32,8 +32,15 @@ class UsersController < ApplicationController
     # spotify_user.unfollow(users)
 
     # Get user's top played artists and tracks
-    @oueoue = spotify_user.top_artists #=> (Artist array)
-    spotify_user.top_tracks(time_range: 'short_term') #=> (Track array)
+    # @top_artists = spotify_user.top_artists #=> (Artist array)
+    @top_tracks_raw = spotify_user.top_tracks(time_range: 'short_term') #=> (Track array)
+
+    # "hello".delete "l","lo"        #=> "heo" copy of string
+    # delete! remplace
+    top_tracks_string = @top_tracks_raw.join(' ')
+
+    top_tracks_array = top_tracks_string.split("@name")
+    @top_tracks = top_tracks_array[1]
 
     # Check doc for more
   end
