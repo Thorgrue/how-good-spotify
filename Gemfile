@@ -60,3 +60,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "rspotify", "~> 2.4"
+gem 'dotenv-rails', groups: [:development, :test]

@@ -1,2 +1,35 @@
-Yoyoyoyoy
-<%= @oueoue %>
+<div class="container mx-auto p-10 typewriter">
+  <center><h1>A quel point ton Spotify est chouette ?</h1></center>
+
+  <div class="flex">
+
+    <div class="flex-auto">
+      You recenlty played :
+      <% @recently_played.each do |song| %>
+        <li><%= song.name %></li>
+      <% end %>
+    </div>
+    <div class="flex-auto">
+      Your top tracks are :
+      <% @top_tracks.each do |song| %>
+        <li><%= song.name %></li>
+      <% end %>
+    </div>
+
+    <div class="flex-auto">
+      Your top artists are :
+      <% @top_artists.each do |artist| %>
+        <li><%= artist.name %></li>
+      <% end %>
+    </div>
+
+  </div>
+  <br><hr><br>
+
+  <h2>Ohhh mais tu écoutes aussi <%= @top_artists.sample.name %> ?? Franchement, je trouve ça super aussi !</h2>
+  <% this = @top_artists.sample %>
+  <h2>Entre nous, <%= this.name %>, c'est la meilleure musique <%= this.genres.sample %>, nan ?</h2>
+  <% that = @top_tracks.sample %>
+  <h2>Alleeeez ! <%= that.album.name %>, clairement meilleur album de <%= that.album.release_date %> !</h2>
+
+</div>
