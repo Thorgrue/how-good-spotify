@@ -23,4 +23,7 @@ module HowGoodSpotify
   end
 end
 
-RSpotify::authenticate("dc244f4173ab48bbbff42e71d617c618", "4e40c9fc06f1484caee2405a42d62ea9")
+spotify_key = ENV['SPOTIFY_KEY']
+spotify_secret = ENV['SPOTIFY_SECRET']
+
+RSpotify::authenticate(spotify_key, spotify_secret)

@@ -1,6 +1,38 @@
 <div class="container mx-auto p-10 typewriter">
   <center><h1>A quel point ton Spotify est chouette ?</h1></center>
 
+  <h2>Ohhh !</h2>
+  <h2>Mais tu écoutes aussi <%= @top_artists.sample.name %> ?? Franchement, trop bon goût, c'est archi cool jtrouve!</h2>
+<br>
+  <% this = @top_artists.sample %>
+  <h2>Entre nous, <%= this.name %>, c'est la meilleure musique <%= this.genres[0] %> du monde, nan ?</h2>
+<br>
+  <% that = @top_tracks.sample %>
+  <h2>Alleeeez ! <%= that.album.name %> de <%= that.album.artists[0].name %>, clairement meilleur album de <%= that.album.release_date.slice(0..3) %> !</h2>
+<br>
+  <% thot = @top_tracks.sample %>
+  <h2>Je vois que tu es fin.e connaisseur.se de <%= thot.artists[0].genres[0] %> héhé</h2>
+  <h2>Comment tu as découvert <%= thot.artists[0].name %> ?</h2>
+<br>
+  <h2>Viens on joue à un jeu ! Qui de l'oeuf ou de la poule ?</h2>
+  <h2>Qu'est-ce que tu as découvert en preums ?</h2>
+    <% jeu1 = @top_tracks[12] %>
+  <li><%= jeu1.name %> / Pochette de l'album   OU   <%= jeu1.artists[0].name %> / Photo de l'artist</li>
+    <% jeu2 = @top_tracks[7] %>
+  <li><%= jeu2.name %> / Pochette de l'album   OU   <%= jeu2.artists[0].name %> / Photo de l'artist</li>
+    <% jeu3 = @top_tracks[18] %>
+  <li><%= jeu3.name %> / Pochette de l'album   OU   <%= jeu3.artists[0].name %> / Photo de l'artist</li>
+<br>
+  <% recently = @recently_played.sample %>
+  <h2>C'est marrant que t'écoutes <%= recently.name %> !</h2>
+  <h2>J'écoutais justement un peu de <%= recently.artists[0].genres[0] %> !</h2>
+<br>
+  <h2>T'as déjà écouté <%= @most_underground[3].name %> ?</h2>
+  <h2>Who, pourtant y'en a pas tant que ça des happy few qui connaissent cette perle !</h2>
+  <h2>Bravo pour ton ouverture d'oreille 🤗</h2>
+<br>
+
+
   <div class="flex">
 
     <div class="flex-auto">
@@ -22,14 +54,37 @@
         <li><%= artist.name %></li>
       <% end %>
     </div>
+  </div>
+
+<br>
+  <center><h2>Your underground tastes</h2></center>
+  <div class="flex">
+    <div class="flex-auto">
+      The least popular tracks among your recent tracks :
+      <% @underground_recent.each do |song| %>
+        <% if song.popularity < 51 %>
+          <li><%= song.name %> (<%= song.popularity %>)</li>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="flex-auto">
+      The least popular tracks among your top :
+      <% @underground_tracks.each do |song| %>
+        <% if song.popularity < 51 %>
+          <li><%= song.name %> (<%= song.popularity %>)</li>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="flex-auto">
+      The least popular artists among your top :
+      <% @underground_artists.each do |artist| %>
+        <% if artist.popularity < 51 %>
+          <li><%= artist.name %> (<%= artist.popularity %>)</li>
+        <% end %>
+      <% end %>
+    </div>
 
   </div>
-  <br><hr><br>
 
-  <h2>Ohhh mais tu écoutes aussi <%= @top_artists.sample.name %> ?? Franchement, je trouve ça super aussi !</h2>
-  <% this = @top_artists.sample %>
-  <h2>Entre nous, <%= this.name %>, c'est la meilleure musique <%= this.genres.sample %>, nan ?</h2>
-  <% that = @top_tracks.sample %>
-  <h2>Alleeeez ! <%= that.album.name %>, clairement meilleur album de <%= that.album.release_date %> !</h2>
 
 </div>
