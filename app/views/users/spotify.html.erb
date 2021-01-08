@@ -1,6 +1,8 @@
 <div class="container mx-auto p-10 typewriter">
   <center><h1>A quel point ton Spotify est chouette ?</h1></center>
-
+<% if @top_artists.empty? %>
+  <h2>Tu n'as aucune musique sur ton Spotify, n'hésite pas à plus l'utiliser !</h2>
+<% else %>
   <h2>Ohhhhh !</h2>
   <h2>Mais tu écoutes aussi <%= @top_artists.sample.name %> ?? Franchement, trop bon goût, c'est archi cool jtrouve!</h2>
 <br>
@@ -85,6 +87,7 @@
     </div>
 
   </div>
+<% end %>
 
 
 </div>
