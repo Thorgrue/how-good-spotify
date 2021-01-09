@@ -3,7 +3,7 @@
 <% if @top_artists.empty? %>
   <h2>Tu n'as aucune musique sur ton Spotify, n'hésite pas à plus l'utiliser !</h2>
 <% else %>
-<!--   <h2>Ohhhhh !</h2>
+<h2>Ohhhhh !</h2>
   <% thas = @top_artists.sample %>
   <% delete_element(@top_artists, thas) %>
   <h2>Mais tu écoutes aussi <%= thas.name %> ?? Franchement, trop bon goût, c'est archi cool jtrouve!</h2>
@@ -17,9 +17,11 @@
 <br>
   <% thot = @top_tracks.sample %>
   <h2>Je vois que tu es fin.e connaisseur.se de <%= thot.artists[0].genres[0] %> héhé</h2>
-  <h2>Comment tu as découvert <%= thot.artists[0].name %> ?</h2> -->
+  <h2>Comment tu as découvert <%= thot.artists[0].name %> ?</h2>
+
 <%= render 'shared/game' %>
-<!--   <% recently = @recently_played.sample %>
+
+  <% recently = @recently_played.sample %>
   <h2>C'est marrant que t'écoutes <%= recently.name %> !</h2>
   <h2>J'écoutais justement un peu de <%= recently.artists[0].genres[0] %> !</h2>
 <br>
@@ -33,7 +35,7 @@
   <% if @original_complex < 51 %>
   <h2>Whawww je suis bluffé !</h2>
   <h2>Ton Spotify est composé à <%= (100 - @original_complex) %>% de contenu original !</h2>
-  <h2>Où trouves-tu toute cette inspiration ? J'espère que tu fais tourner à tes proches...</h2> -->
+  <h2>Où trouves-tu toute cette inspiration ? J'espère que tu fais tourner à tes proches...</h2>
   <% end %>
 <br>
 
