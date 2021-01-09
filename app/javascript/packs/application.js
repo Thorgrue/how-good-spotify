@@ -9,21 +9,17 @@ require("@rails/activestorage").start()
 require("channels")
 
 
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-// ----------------------------------------------------
-// WRITE YOUR OWN JS STARTING FROM HERE 👇
-// ----------------------------------------------------
-// External imports
-
 // Internal imports, e.g:
 import '../stylesheets/application.scss';
+import '../components/type.js';
+import Typed from 'typed.js';
+
 
 
 document.addEventListener('turbolinks:load', () => {
+  const button = document.getElementById('btn-spotify');
+  setTimeout(() => {
+    button.classList.remove('hidden');
+  }, 6600);
   // Call your functions here, e.g:
 });
