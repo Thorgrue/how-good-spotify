@@ -22,11 +22,11 @@
   <h2>Viens on joue à un jeu ! Qui de l'oeuf ou de la poule ?</h2>
   <h2>Qu'est-ce que tu as découvert en preums ?</h2>
     <% jeu1 = @top_tracks[12] %>
-  <li><%= jeu1.name %> / Pochette de l'album   OU   <%= jeu1.artists[0].name %> / Photo de l'artist</li>
+  <li><%= jeu1.name %><img src="<%= jeu1.album.images[2]["url"] %>">  OU   <%= jeu1.artists[0].name %> <img src="<%= jeu1.artists[0].images.last["url"] %>"></li>
     <% jeu2 = @top_tracks[7] %>
-  <li><%= jeu2.name %> / Pochette de l'album   OU   <%= jeu2.artists[0].name %> / Photo de l'artist</li>
+  <li><%= jeu2.name %><img src="<%= jeu2.album.images[2]["url"] %>">  OU   <%= jeu2.artists[0].name %> <img src="<%= jeu2.artists[0].images.last["url"] %>"></li>
     <% jeu3 = @top_tracks[18] %>
-  <li><%= jeu3.name %> / Pochette de l'album   OU   <%= jeu3.artists[0].name %> / Photo de l'artist</li>
+  <li><%= jeu3.name %><img src="<%= jeu3.album.images[2]["url"] %>">  OU   <%= jeu3.artists[0].name %> <img src="<%= jeu3.artists[0].images.last["url"] %>"></li>
 <br>
   <% recently = @recently_played.sample %>
   <h2>C'est marrant que t'écoutes <%= recently.name %> !</h2>

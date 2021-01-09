@@ -20,6 +20,7 @@ document.addEventListener('turbolinks:load', () => {
   const button = document.getElementById('btn-spotify');
   setTimeout(() => {
     button.classList.remove('hidden');
-  }, 6600);
+  }, 100);
+  // 6600 works great
   // Call your functions here, e.g:
 });
