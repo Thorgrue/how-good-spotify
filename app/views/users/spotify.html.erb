@@ -36,7 +36,15 @@
   <h2>Who, pourtant y'en a pas tant que ça des happy few qui connaissent cette perle !</h2>
   <h2>Bravo pour ton ouverture d'oreille 🤗</h2>
 <br>
-
+  <h2>Au vu de ce que tu écoutes, tu retournerai bien en <%= @stuck_years %> ! </h2>
+  <h2>Tu m'étonnes, y'a quand même eu l'album de <%= @stuck_years_artist %> </h2>
+<br>
+  <% if @original_complex < 51 %>
+  <h2>Whawww je suis bluffé !</h2>
+  <h2>Ton Spotify est composé à <%= (100 - @original_complex) %>% de contenu original !</h2>
+  <h2>Où trouves-tu toute cette inspiration ? J'espère que tu fais tourner à tes proches...</h2>
+  <% end %>
+<br>
 
   <div class="flex">
 
@@ -56,7 +64,7 @@
     <div class="flex-auto">
       Your top artists are :
       <% @top_artists.each do |artist| %>
-        <li><%= artist.name %></li>
+        <li><%= artist.name %> (<%= artist.popularity %>)</li>
       <% end %>
     </div>
   </div>
