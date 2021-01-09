@@ -11,16 +11,15 @@ require("channels")
 
 // Internal imports, e.g:
 import '../stylesheets/application.scss';
-import '../components/type.js';
-import Typed from 'typed.js';
+import loadHomeSentence from '../components/loadHomeSentence.js';
+import loadSpotifyButton from '../components/loadSpotifyButton.js';
+import pickToggle from '../components/pickToggle.js';
 
 
 
 document.addEventListener('turbolinks:load', () => {
-  const button = document.getElementById('btn-spotify');
-  setTimeout(() => {
-    button.classList.remove('hidden');
-  }, 100);
+  loadHomeSentence();
+  loadSpotifyButton();
   // 6600 works great
-  // Call your functions here, e.g:
+  pickToggle();
 });

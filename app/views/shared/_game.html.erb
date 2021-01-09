@@ -1,7 +1,58 @@
 <br>
   <h2>Viens on joue à un jeu ! Qui de l'oeuf ou de la poule ?</h2>
   <h2>Qu'est-ce que tu as découvert en preums ?</h2>
-  <li>Il changeait la vie <%= image_tag 'Album1.jpeg' %>  OU  Jean-Jacques Goldmand <img src=""></li>
-  <li>J'aime bien me mettre de la crème (sur le visage)<img src="">  OU   Andréas & Nicolas <img src=""></li>
-  <li>Fever<img src="">  OU   Dua Lipa <img src=""></li>
+  <div class="flex justify-end">
+    <div class="flex justify-between w-2/5">
+      <div id="toggle_pick1a" class="flex flex-col items-center hvr-skew-forward p-2 border-2 border-black border-opacity-0 rounded-lg">
+        <p >Il changeait la vie</p>
+        <%= image_tag 'Album1.jpeg', size: "100", class:"rounded-lg" %>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <p>OU</p>
+      </div>
+      <div id="toggle_pick1b" class="flex flex-col items-center hvr-skew-backward p-2 border-2 border-black border-opacity-0 rounded-lg">
+        <p>Jean-Jacques Goldman</p>
+        <%= image_tag 'Artist1.jpeg', size:100, class:"rounded-lg" %>
+      </div>
+    </div>
+  </div>
+  <h2>Forcémeeeeent hahah </h2>
+  <h2>Encore ! </h2>
+
+  <div class="flex justify-end">
+    <div class="flex justify-between w-2/5">
+      <div id="toggle_pick2a" class="flex flex-col items-center hvr-wobble-top p-2 border-2 border-black border-opacity-0 rounded-lg">
+        <p>Fever</p>
+        <%= image_tag 'Album2.jpeg', size: "100", class:"rounded-lg" %>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <p>OU</p>
+      </div>
+      <div id="toggle_pick2b" class="flex flex-col items-center hvr-wobble-top border-2 p-2 border-black border-opacity-0 rounded-lg">
+        <p>Dua Lipa</p>
+        <%= image_tag 'Artist2.jpeg', size:100, class:"rounded-lg" %>
+      </div>
+    </div>
+  </div>
+
+  <h2>Ah ben tiens ! Tout pareil héhé </h2>
+  <h2>Un ptit dernier pour la route !</h2>
+
+  <div class="flex justify-end">
+    <div class="flex justify-between w-2/5">
+      <div id="toggle_pick3a" class="flex flex-col items-center hvr-buzz-out p-2 border-2 border-black border-opacity-0 rounded-lg">
+        <p>Fever</p>
+        <%= image_tag 'Album2.jpeg', size: "100", class:"rounded-lg" %>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <p>OU</p>
+      </div>
+      <div id="toggle_pick3b" class="flex flex-col items-center hvr-buzz-out p-2 border-2 border-black border-opacity-0 rounded-lg">
+        <p>Dua Lipa</p>
+        <%= image_tag 'Artist2.jpeg', size:100, class:"rounded-lg" %>
+      </div>
+    </div>
+  </div>
+
+  <h2>Bien joué bg ! </h2>
 <br>
