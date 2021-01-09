@@ -24,6 +24,10 @@ class UsersController < ApplicationController
 
   end
 
+  def test
+
+  end
+
   private
 
   def average_year
