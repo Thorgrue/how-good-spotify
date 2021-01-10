@@ -1,4 +1,44 @@
+<% if @top_tracks == nil %>
 <br>
+
+  <h2>Viens on joue à un jeu ! Qui de l'oeuf ou de la poule ?</h2>
+  <h2>Qu'est-ce que tu as découvert en preums ?</h2>
+  <div class="flex justify-end">
+    <div class="flex justify-between w-2/5">
+      <div id="toggle_pick1a" class="flex flex-col items-center hvr-skew-forward p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+        <p>Il changeait la vie</p>
+        <%=image_tag("Album1.jpeg", class:"rounded-lg h-20") %>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <p>OU</p>
+      </div>
+      <div id="toggle_pick1b" class="flex flex-col items-center hvr-skew-backward p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+        <p>Jean Jacques Goldman</p>
+        <%=image_tag("Artist1.jpeg", class:"rounded-lg h-20") %>
+      </div>
+    </div>
+  </div>
+
+  <h2>Forcémeeeeent hahah </h2>
+  <h2>Encore ! </h2>
+  <div class="flex justify-end">
+    <div class="flex justify-between w-2/5">
+      <div id="toggle_pick2a" class="flex flex-col items-center hvr-wobble-top p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+        <p>Fever</p>
+        <%=image_tag("Album2.jpeg", class:"rounded-lg h-20") %>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <p>OU</p>
+      </div>
+      <div id="toggle_pick2b" class="flex flex-col items-center hvr-wobble-top border-2 p-3 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+        <p>Dua Lipa</p>
+        <%=image_tag("Artist2.jpeg", class:"rounded-lg h-20") %>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+  <!-- <br>
 
   <h2>Viens on joue à un jeu ! Qui de l'oeuf ou de la poule ?</h2>
   <h2>Qu'est-ce que tu as découvert en preums ?</h2>
@@ -59,3 +99,6 @@
 
   <h2>Bien joué bg ! </h2>
 <br>
+ -->
+
+ <% end %>
