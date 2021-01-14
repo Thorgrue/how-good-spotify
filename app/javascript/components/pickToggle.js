@@ -8,17 +8,21 @@ const pickToggle = () => {
       return;
 
     choice1.addEventListener("click", () => {
-      choice1.classList.toggle("border-opacity-0");
-      choice1.classList.toggle("border-opacity-75");
-      choice2.classList.remove("border-opacity-75");
-      choice2.classList.add("border-opacity-0");
+      choice1.classList.remove("border-dashed");
+      choice1.classList.add("border-white");
+      choice1.classList.remove("text-black");
+      choice2.classList.add("border-dashed");
+      choice2.classList.add("text-black");
+      choice2.classList.remove("border-white")
     });
 
     choice2.addEventListener("click", () => {
-      choice2.classList.toggle("border-opacity-0");
-      choice2.classList.toggle("border-opacity-75");
-      choice1.classList.remove("border-opacity-75");
-      choice1.classList.add("border-opacity-0");
+      choice2.classList.remove("border-dashed");
+      choice2.classList.add("border-white")
+      choice2.classList.remove("text-black");
+      choice1.classList.add("border-dashed");
+      choice1.classList.add("text-black");
+      choice1.classList.remove("border-white");
     });
   };
 }
