@@ -7,6 +7,13 @@ module.exports = {
         'green-spotify': '#1ED760',
         'marble': '#F1F0EA',
         'black-console': '#191919',
+        'lavander': '#B298DC',
+        'lilac': '#E59DE4',
+        'peach': '#EE7F77',
+        'coral': '#FF9B85',
+        'apricot': '#EBD57B',
+        'pea': '#CBE896',
+        'baby-blue': '#B8D0EB',
       },
       backgroundColor: {
         'green-spotify': '#1ED760',
