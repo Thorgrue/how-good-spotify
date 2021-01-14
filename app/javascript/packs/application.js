@@ -13,6 +13,7 @@ require("channels")
 import '../stylesheets/application.scss';
 import loadHomeSentence from '../components/loadHomeSentence.js';
 import loadSpotifyButton from '../components/loadSpotifyButton.js';
+import loadAnalyseSentences from '../components/loadAnalyseSentences.js';
 import pickToggle from '../components/pickToggle.js';
 
 
@@ -21,5 +22,6 @@ document.addEventListener('turbolinks:load', () => {
   loadHomeSentence();
   loadSpotifyButton();
   // 6600 works great
+  loadAnalyseSentences();
   pickToggle();
 });

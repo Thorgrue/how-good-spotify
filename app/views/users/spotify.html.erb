@@ -1,43 +1,78 @@
-<div class="container mx-auto p-10 typewriter">
-  <center><h1>A quel point ton Spotify est chouette ?</h1></center>
+<div id="typewriter" class="container mx-auto p-10">
+
+<section>
+  <h1>Tu veux savoir à quel point ton Spotify est chouette ?</h1>
+  <h2>C'est le moment de le découvrir</h2>
+  <p>Attends un poil, que j'analyse un peu tout ça</p>
+  <p>...</p>
+  <p>Tiens, pour passer le temps, je me présente :</p>
+  <p>Je suis un petit programme d'IA et j'ai pour unique but de mettre un peu de douceur dans ta journée.</p>
+  <p>Ça y est, j'ai fini !</p>
+  <p>Mais <strong>avant toute chose</strong>, dis moi</p>
+  <p>Comment vas tu <strong>vraiment</strong>, là tout de suite ?</p>
+  <div class="flex justify-end">
+    <div class="flex justify-between w-2/5">
+      <div id="" class="flex flex-col items-center p-2 border-2 border-black border-opacity-70 rounded-lg">
+        <p>Au top du pop</p>
+      </div>
+      <div id="" class="flex flex-col items-center p-2 border-2 border-black border-opacity-70 rounded-lg">
+        <p>Bah.. pas si ouf</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <% if @top_artists.empty? %>
   <h2>Tu n'as aucune musique sur ton Spotify, n'hésite pas à plus l'utiliser !</h2>
-<% else %>
-<!--   <h2>Ohhhhh !</h2>
-  <% thas = @top_artists.sample %>
-  <% delete_element(@top_artists, thas) %>
-  <h2>Mais tu écoutes aussi <%= thas.name %> ?? Franchement, trop bon goût, c'est archi cool jtrouve!</h2>
-<br>
-  <% this = @top_artists.sample %>
-  <% delete_element(@top_artists, this) %>
-  <h2>Entre nous, <%= this.name %>, c'est la meilleure musique <%= this.genres[0] %> du monde, nan ?</h2>
-<br>
-  <% that = @top_tracks.sample %>
-  <h2>Alleeeez ! <%= that.album.name %> de <%= that.album.artists[0].name %>, clairement meilleur album de <%= that.album.release_date.slice(0..3) %> !</h2>
-<br>
-  <% thot = @top_tracks.sample %>
-  <h2>Je vois que tu es fin.e connaisseur.se de <%= thot.artists[0].genres[0] %> héhé</h2>
-  <h2>Comment tu as découvert <%= thot.artists[0].name %> ?</h2> -->
-<%= render 'shared/game' %>
-<!--   <% recently = @recently_played.sample %>
-  <h2>C'est marrant que t'écoutes <%= recently.name %> !</h2>
-  <h2>J'écoutais justement un peu de <%= recently.artists[0].genres[0] %> !</h2>
-<br>
-  <h2>T'as déjà écouté <%= @most_underground[3].name %> ?</h2>
-  <h2>Who, pourtant y'en a pas tant que ça des happy few qui connaissent cette perle !</h2>
-  <h2>Bravo pour ton ouverture d'oreille 🤗</h2>
-<br>
-  <h2>Au vu de ce que tu écoutes, tu retournerai bien en <%= @stuck_years %> ! </h2>
-  <h2>Tu m'étonnes, y'a quand même eu l'album de <%= @stuck_years_artist %> </h2>
-<br>
-  <% if @original_complex < 51 %>
-  <h2>Whawww je suis bluffé !</h2>
-  <h2>Ton Spotify est composé à <%= (100 - @original_complex) %>% de contenu original !</h2>
-  <h2>Où trouves-tu toute cette inspiration ? J'espère que tu fais tourner à tes proches...</h2> -->
-  <% end %>
-<br>
 
-  <div class="flex">
+<% else %>
+  <section>
+    <p>Ohhhhh !</p>
+    <p>Sérieuuux ?</p>
+    <p>Mais nan haha</p>
+    <% thas = @top_artists.sample %>
+    <% delete_element(@top_artists, thas) %>
+    <p>Tu écoutes aussi <strong><%= thas.name %></strong> ?? Franchement, c'est archi cool jtrouve!</p>
+  <br>
+    <% this = @top_artists.sample %>
+    <% delete_element(@top_artists, this) %>
+    <p>Ah ben voilà toi aussi !</p>
+    <p>Entre nous, <strong><%= this.name %></strong>, c'est la meilleure musique <%= this.genres[0] %> du monde, nan ?</p>
+  <br>
+    <% that = @top_tracks.sample %>
+    <p>Alleeeez ! <em><%= that.album.name %></em> de <strong><%= that.album.artists[0].name %></strong>, clairement meilleur album de <%= that.album.release_date.slice(0..3) %> !</p>
+  <br>
+    <% thot = @top_tracks.sample %>
+    <p>Ah, je te reconnais bien là</p>
+    <p>Je vois que tu es fin.e connaisseur.se de <%= thot.artists[0].genres[0] %> héhé</p>
+    <p>Comment tu as découvert <strong><%= thot.artists[0].name %></strong> ?</p>
+  </section>
+
+  <%= render 'shared/game' %>
+
+  <section>
+    <% recently = @recently_played.sample %>
+    <p>C'est marrant que t'écoutes <%= recently.name %> !</p>
+    <p>J'écoutais justement un peu de <%= recently.artists[0].genres[0] %> !</p>
+  <br>
+    <p>T'as déjà écouté <%= @most_underground[3].name %> ?</p>
+    <p>Who, pourtant y'en a pas grand monde qui connait ! Et seuls quelques happy few s'ambiancent dessus !</p>
+    <p>Bravo pour ton ouverture d'oreille 🤗</p>
+  <br>
+    <p>Au vu de ce que tu écoutes, tu retournerai bien en <%= @stuck_years %> ! </p>
+    <p>Tu m'étonnes, y'a quand même eu l'album de <%= @stuck_years_artist %> </p>
+  <br>
+    <% if @original_complex < 51 %>
+      <p>Whawww je suis bluffé !</p>
+      <p>Ton Spotify est composé à <%= (100 - @original_complex) %>% de contenu original !</p>
+      <p>Bravo!</p>
+      <p>Où trouves-tu toute cette inspiration ? J'espère que tu fais tourner à tes proches...</p>
+    <% end %>
+  <br>
+  </section>
+
+<!--   <div class="flex">
 
     <div class="flex-auto">
       You recenlty played :
@@ -58,10 +93,10 @@
         <li><%= artist.name %> (<%= artist.popularity %>)</li>
       <% end %>
     </div>
-  </div>
+  </div> -->
 
 <br>
-  <center><h2>Your underground tastes</h2></center>
+<!--   <center><p>Your underground tastes</p></center>
   <div class="flex">
     <div class="flex-auto">
       The least popular tracks among your recent tracks :
@@ -88,7 +123,7 @@
       <% end %>
     </div>
 
-  </div>
+  </div> -->
 <% end %>
 
 
