@@ -1,44 +1,26 @@
-// import Typed from 'typed.js';
-
-// const loadHomeSentence = () => {
-//   if (document.getElementById('typed') === null)
-//     return
-//   const sentence = `
-//     <span>Holaaaaaaaa !</span>
-//     <br />
-//     <span>Bienvenuuuuue ici !</span>
-//     <br />
-//     <span>Tu veux découvrir ce que ton Spotify a de CHOUETTE ?</span>
-//   `
-
-//     const typed = new Typed('#typed', {
-//       strings: [sentence],
-//       typeSpeed: 40,
-//       smartBackspace: true,
-//       contentType: 'html',
-//       loop: false
-//     });
-//   };
-
-// export default loadHomeSentence;
-
-
 import TypeIt from "typeit";
 
 const loadHomeSentence = () => {
   if (document.getElementById('typed') === null)
     return
   const type = new TypeIt("#typed", {
-    speed: 45,
+    speed: 38,
     loop: false,
     waitUntilVisible: true,
     breakLines: true
   })
-  .type("Holaaaa !", {delay: 100})
+  .type("Saltu toi !", {delay: 100})
+  .move(-6, { delay: 100 })
+  .delete(2, { delay: 100 })
+  .type('ut')
+  .move('END')
   .break({delay: 200})
   .type("Bienvenuuuue ici !", {delay: 100})
   .break({delay: 200})
-  .type("Tu veux découvrir tout ce que <em>ton</em> Spotify a de <strong>chouette</strong> ?", {delay: 100})
+  .type("Viens découvrir ce qu'il y a de <strong>chouette</strong> dans ton Spotify ?", {delay: 100})
+  .move(-10, { delay: 100})
+  .delete(3)
+  .type("<em>ton</em>")
   .go();
 }
 
