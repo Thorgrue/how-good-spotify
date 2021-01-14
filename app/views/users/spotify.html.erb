@@ -1,11 +1,11 @@
-<div id="typewriter" class="container mx-auto p-10">
+<div id="typewriter" class="container overflow-y-scroll h-full mx-auto w-2/3 p-6">
 
 <section>
   <h1>Tu veux savoir à quel point ton Spotify est chouette ?</h1>
   <p>Attends un poil, que j'analyse un peu tout ça</p>
-  <p>...</p>
   <p>Je suis un petit programme d'IA</p>
-  <p>j'ai pour unique but de mettre un peu de douceur dans ta journée</p>
+  <p>J'ai pour unique but de mettre un peu de douceur dans ta journée</p>
+<br>
   <p>Mais <strong>avant toute chose</strong>, dis moi</p>
   <p>Comment vas tu <strong>vraiment</strong>, là tout de suite ?</p>
   <div class="flex justify-end">
@@ -36,11 +36,12 @@
   <br>
     <% this = @top_artists.sample %>
     <% delete_element(@top_artists, this) %>
-    <p>Entre nous, <strong><%= this.name %></strong>, c'est la meilleure musique <%= this.genres[0] %> du monde, nan ?</p>
+    <p>Entre nous, <strong><%= this.name %></strong>, meilleure musique <%= this.genres[0] %> du monde, nan ?</p>
   <br>
     <% that = @top_tracks.sample %>
     <p>Alleeeez !</p>
-    <p><em><%= that.album.name %></em> de <strong><%= that.album.artists[0].name %></strong>, clairement meilleur album de <%= that.album.release_date.slice(0..3) %> !</p>
+    <p>En vrai, <em><%= that.album.name %></em> de <strong><%= that.album.artists[0].name %></strong></p>
+    <p>clairement meilleur album de <%= that.album.release_date.slice(0..3) %> !</p>
   <br>
     <% thot = @top_tracks.sample %>
     <p>Ah, je te reconnais bien là</p>
