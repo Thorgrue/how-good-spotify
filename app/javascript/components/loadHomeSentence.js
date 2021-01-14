@@ -19,10 +19,10 @@ const loadHomeSentence = () => {
   .break({delay: 200})
   .type("Bienvenuuuue ici !", {delay: 100})
   .break({delay: 200})
-  .type("Viens découvrir ce qu'il y a de <strong>chouette</strong> dans ton Spotify ?", {delay: 100})
+  .type("Viens découvrir ce qu'il y a de <strong>chouette</strong> dans ton Spotify !", {delay: 100})
   .move(-10, { delay: 100})
   .delete(3)
-  .type("<em>ton</em>")
+  .type("<em><strong>ton</strong></em>")
   .go();
 };
 
