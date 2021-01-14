@@ -1,6 +1,6 @@
 const scrollAuto = () => {
   window.setInterval(function() {
-    var elem = document.getElementById('typewriter');
+    var elem = document.getElementById('contain');
     elem.scrollTop = elem.scrollHeight;
   }, 100);
 
