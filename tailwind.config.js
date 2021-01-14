@@ -15,7 +15,10 @@ module.exports = {
       },
       boxShadow: {
         'inner-xl': 'inset 0px 0px 6px 4px rgba(0, 0, 0, 0.3)',
-      }
+      },
+      height: {
+       'quasi-full': '99%',
+     }
     }
   },
   variants: {
