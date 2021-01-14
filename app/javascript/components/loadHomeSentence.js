@@ -29,12 +29,15 @@ const loadHomeSentence = () => {
   if (document.getElementById('typed') === null)
     return
   const type = new TypeIt("#typed", {
-    speed: 75,
+    speed: 45,
     loop: false,
-    waitUntilVisible: true
+    waitUntilVisible: true,
+    breakLines: true
   })
   .type("Holaaaa !", {delay: 100})
+  .break({delay: 200})
   .type("Bienvenuuuue ici !", {delay: 100})
+  .break({delay: 200})
   .type("Tu veux découvrir tout ce que <em>ton</em> Spotify a de <strong>chouette</strong> ?", {delay: 100})
   .go();
 }
