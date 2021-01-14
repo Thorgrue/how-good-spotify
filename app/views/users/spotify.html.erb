@@ -40,13 +40,13 @@
   <br>
     <% that = @top_tracks.sample %>
     <p>Alleeeez !</p>
-    <p>En vrai, <em><%= that.album.name %></em> de <strong><%= that.album.artists[0].name %></strong></p>
-    <p>clairement meilleur album de <%= that.album.release_date.slice(0..3) %> !</p>
+    <p>En vrai, <em><%= that.album.name %></em> de <strong><%= that.album.artists[0].name %></strong>, best album de <%= that.album.release_date.slice(0..3) %> !</p>
   <br>
     <% thot = @top_tracks.sample %>
     <p>Ah, je te reconnais bien là</p>
     <p>Fin.e connaisseur.se de <%= thot.artists[0].genres[0] %> héhé</p>
     <p>Comment tu as découvert <strong><%= thot.artists[0].name %></strong> ?</p>
+  <br>
   </section>
 
   <%= render 'shared/game' %>

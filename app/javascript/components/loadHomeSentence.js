@@ -1,5 +1,7 @@
 import TypeIt from "typeit";
 
+let isFinish = false;
+
 const loadHomeSentence = () => {
   if (document.getElementById('typed') === null)
     return
@@ -22,6 +24,24 @@ const loadHomeSentence = () => {
   .delete(3)
   .type("<em>ton</em>")
   .go();
-}
+};
 
-export default loadHomeSentence;
+const pause = (scroll) => window.clearTimeout(scroll)
+const scrollAuto = () => {
+  const elem = document.getElementById('typewriter');
+  const scroll = window.setInterval(() => {
+    if (elem.scrollTop > 1200) {
+      pause(scroll)
+    }
+    else {
+      elem.scrollTop = elem.scrollHeight;
+    }
+  }, 100);
+};
+
+
+
+export {
+  loadHomeSentence,
+  scrollAuto
+};
