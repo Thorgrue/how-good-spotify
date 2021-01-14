@@ -21,9 +21,9 @@ import pickToggle from '../components/pickToggle.js';
 document.addEventListener('turbolinks:load', () => {
   loadHomeSentence();
   loadSpotifyButton();
-  scrollAuto();
-  loadAnalyseSentences();
+  // scrollAuto();
   pickToggle();
+  loadAnalyseSentences();
 
 });
 

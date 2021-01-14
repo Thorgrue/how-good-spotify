@@ -1,57 +1,64 @@
-<div id="typewriter" class="container overflow-y-scroll h-full mx-auto w-2/3 p-6">
-
-<section>
-  <h1>Tu veux savoir à quel point ton Spotify est chouette ?</h1>
-  <p>Attends un poil, que j'analyse un peu tout ça</p>
-  <p>Je suis un petit programme d'IA</p>
-  <p>J'ai pour unique but de mettre un peu de douceur dans ta journée</p>
-<br>
-  <p>Mais <strong>avant toute chose</strong>, dis moi</p>
-  <p>Comment vas tu <strong>vraiment</strong>, là tout de suite ?</p>
-  <div class="flex justify-end">
-    <div class="flex justify-between w-2/5">
-      <div id="" class="flex flex-col items-center p-2 border-2 border-black border-opacity-70 rounded-lg">
-        <p>Au top du pop</p>
-      </div>
-      <div id="" class="flex flex-col items-center p-2 border-2 border-black border-opacity-70 rounded-lg">
-        <p>Bah.. pas si ouf</p>
-      </div>
+<div id="contain" class="container overflow-y-scroll h-full mx-auto w-2/3 p-6">
+  <section >
+    <div id="typewriter1">
+      <h1>Tu veux savoir à quel point ton Spotify est chouette ?</h1>
+      <p>Attends un poil, que j'analyse un peu tout ça</p>
+      <p>Je suis un petit programme d'IA</p>
+      <p>J'ai pour unique but de mettre un peu de douceur dans ta journée</p>
+    <br>
+      <p>Mais <strong>avant toute chose</strong>, dis moi</p>
+      <p>Comment vas tu <strong>vraiment</strong>, là tout de suite ?</p>
     </div>
-  </div>
-</section>
+      <div class="flex justify-end">
+        <div class="flex justify-between w-2/5">
+          <div id="toggle_pick0a" class="flex hidden flex-col items-center p-2 border-2 border-black border-opacity-70 rounded-lg">
+            <p>Au top du pop</p>
+          </div>
+          <div id="toggle_pick0b" class="flex hidden flex-col items-center p-2 border-2 border-black border-opacity-70 rounded-lg">
+            <p>Bah.. pas si ouf</p>
+          </div>
+        </div>
+      </div>
 
-
-<% if @top_artists.empty? %>
-  <h2>Tu n'as aucune musique sur ton Spotify, n'hésite pas à plus l'utiliser !</h2>
-
-<% else %>
-  <section>
-    <p>Ohhhhh !</p>
-    <p>Sérieuuux ?</p>
-    <p>Mais nan haha</p>
-    <% thas = @top_artists.sample %>
-    <% delete_element(@top_artists, thas) %>
-    <p>Tu écoutes aussi <strong><%= thas.name %></strong> ??</p>
-    <p>Franchement, c'est archi cool je trouve!</p>
-  <br>
-    <% this = @top_artists.sample %>
-    <% delete_element(@top_artists, this) %>
-    <p>Entre nous, <strong><%= this.name %></strong>, meilleure musique <%= this.genres[0] %> du monde, nan ?</p>
-  <br>
-    <% that = @top_tracks.sample %>
-    <p>Alleeeez !</p>
-    <p>En vrai, <em><%= that.album.name %></em> de <strong><%= that.album.artists[0].name %></strong>, best album de <%= that.album.release_date.slice(0..3) %> !</p>
-  <br>
-    <% thot = @top_tracks.sample %>
-    <p>Ah, je te reconnais bien là</p>
-    <p>Fin.e connaisseur.se de <%= thot.artists[0].genres[0] %> héhé</p>
-    <p>Comment tu as découvert <strong><%= thot.artists[0].name %></strong> ?</p>
-  <br>
   </section>
+
+
+  <% if @top_artists.empty? %>
+    <h2>Tu n'as aucune musique sur ton Spotify, n'hésite pas à plus l'utiliser !</h2>
+
+  <% else %>
+    <section id="typewriter2" class="hidden">
+      <p>Ohhhhh !</p>
+      <p>Sérieuuux ?</p>
+      <p>Mais nan haha</p>
+      <% thas = @top_artists.sample %>
+      <% delete_element(@top_artists, thas) %>
+      <p>Tu écoutes aussi <strong><%= thas.name %></strong> ??</p>
+      <p>Franchement, c'est archi cool je trouve!</p>
+    <br>
+      <% this = @top_artists.sample %>
+      <% delete_element(@top_artists, this) %>
+      <p>Entre nous, <strong><%= this.name %></strong>, meilleure musique <%= this.genres[0] %> du monde, nan ?</p>
+    <br>
+      <% that = @top_tracks.sample %>
+      <p>Alleeeez !</p>
+      <p>En vrai, <em><%= that.album.name %></em> de <strong><%= that.album.artists[0].name %></strong>, best album de <%= that.album.release_date.slice(0..3) %> !</p>
+    <br>
+      <% thot = @top_tracks.sample %>
+      <p>Ah, je te reconnais bien là</p>
+      <p>Fin.e connaisseur.se de <%= thot.artists[0].genres[0] %> héhé</p>
+      <p>Comment tu as découvert <strong><%= thot.artists[0].name %></strong> ?</p>
+    <br>
+      <h2>Viens on joue à un jeu ! Qui de l'oeuf ou de la poule ?</h2>
+      <p>Qu'est-ce que tu as découvert en preums ?</p>
+    </section>
+
 
   <%= render 'shared/game' %>
 
-  <section>
+  <section id="typewriter5" class="hidden">
+    <p>Bien joué bg ! </p>
+  <br>
     <% recently = @recently_played.sample %>
     <p>C'est marrant que t'écoutes <%= recently.name %> !</p>
     <p>J'écoutais justement un peu de <%= recently.artists[0].genres[0] %> !</p>
