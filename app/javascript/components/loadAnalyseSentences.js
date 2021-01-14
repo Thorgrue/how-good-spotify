@@ -4,7 +4,7 @@ const loadAnalyseSentences = () => {
   if (document.getElementById('typewriter') === null)
     return
   const type = new TypeIt("#typewriter", {
-    speed: 30,
+    speed: 20,
     loop: false,
     waitUntilVisible: true,
     breakLines: true
