@@ -9,10 +9,14 @@ const loadAnalyseSentences = (num) => {
     loop: false,
     waitUntilVisible: true,
     breakLines: true,
+    cursor: false,
     afterComplete: async (step, instance) => {
       if (document.getElementById(`typewriter${num + 1}`) != null) {
         loadOnClick(num - 1, loadAnalyseSentences(num + 1));
-      }
+      };
+      if ((num) === 4) {
+        loadStatsButton();
+      };
     }
   })
   .go();
@@ -40,6 +44,15 @@ const loadOnClick = (num, func) => {
 
   scrollAuto();
 
+};
+
+const loadStatsButton = () => {
+  if (document.getElementById('btn-stats') === null)
+    return
+  const button = document.getElementById('btn-stats');
+  setTimeout(() => {
+    button.classList.remove('hidden');
+  }, 20000);
 };
 
 export default loadAnalyseSentences;
