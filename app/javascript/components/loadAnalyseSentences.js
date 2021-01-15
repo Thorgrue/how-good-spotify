@@ -1,4 +1,5 @@
 import TypeIt from "typeit";
+import scrollAuto from './scrollAuto'
 
 const loadAnalyseSentences = () => {
   if (document.querySelector("#typewriter1") === null)
@@ -84,21 +85,23 @@ const loadAnalyseSentencesFifth = () => {
 const loadOnClick = (num, func) => {
   const toggleA = document.getElementById(`toggle_pick${num}a`);
   const toggleB = document.getElementById(`toggle_pick${num}b`);
-  toggleA.classList.remove('hidden');
-  toggleB.classList.remove('hidden');
-
-  console.log(textHidden);
   const textHidden = document.getElementById(`typewriter${num + 2}`);
 
 
+  toggleA.classList.remove('hidden');
   toggleA.addEventListener('click', () => {
     textHidden.classList.remove('hidden');
     func();
   });
+
+  toggleB.classList.remove('hidden');
   toggleB.addEventListener('click', () => {
     textHidden.classList.remove('hidden');
     func();
   });
+
+  scrollAuto();
+
 };
 
 export default loadAnalyseSentences;
