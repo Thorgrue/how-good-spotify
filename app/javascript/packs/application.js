@@ -11,7 +11,7 @@ require("channels")
 
 // Internal imports, e.g:
 import '../stylesheets/application.scss';
-import { loadHomeSentence, scrollAuto } from '../components/loadHomeSentence.js';
+import loadHomeSentence from '../components/loadHomeSentence.js';
 import loadSpotifyButton from '../components/loadSpotifyButton.js';
 import loadAnalyseSentences from '../components/loadAnalyseSentences.js';
 import pickToggle from '../components/pickToggle.js';
@@ -21,9 +21,8 @@ import pickToggle from '../components/pickToggle.js';
 document.addEventListener('turbolinks:load', () => {
   loadHomeSentence();
   loadSpotifyButton();
-  // scrollAuto();
   pickToggle();
-  loadAnalyseSentences();
+  loadAnalyseSentences(1);
 
 });
 

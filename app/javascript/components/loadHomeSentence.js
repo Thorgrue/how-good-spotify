@@ -26,22 +26,6 @@ const loadHomeSentence = () => {
   .go();
 };
 
-const pause = (scroll) => window.clearTimeout(scroll)
-const scrollAuto = () => {
-  const elem = document.getElementById('typewriter');
-  const scroll = window.setInterval(() => {
-    if (elem.scrollTop > 1200) {
-      pause(scroll)
-    }
-    else {
-      elem.scrollTop = elem.scrollHeight;
-    }
-  }, 100);
-};
 
 
-
-export {
-  loadHomeSentence,
-  scrollAuto
-};
+export default loadHomeSentence;
