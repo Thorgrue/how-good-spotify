@@ -22,7 +22,7 @@ document.addEventListener('turbolinks:load', () => {
   loadHomeSentence();
   loadSpotifyButton();
   pickToggle();
-  loadAnalyseSentences();
+  loadAnalyseSentences(1);
 
 });
 
