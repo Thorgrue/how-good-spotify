@@ -1,6 +1,24 @@
 class UsersController < ApplicationController
+  before_action :set_stats, only: [:spotify]
 
   def spotify
+  end
+
+  def stats_final
+  end
+
+  def test
+  end
+
+  private
+
+  def average_year
+    average = 0
+    @years.each { |year| average += year.to_i }
+    average.fdiv(20).round
+  end
+
+  def set_stats
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
 
     @recently_played = spotify_user.recently_played
@@ -20,28 +38,6 @@ class UsersController < ApplicationController
 
     original = @most_underground.map { |artist| artist.popularity }
     @original_complex = original.select { |popularity| popularity > 80 }.count * 2
-
-  end
-
-  def stats_final
-
-  end
-
-  def test
-
-  end
-
-
-
-  private
-
-  def average_year
-    average = 0
-    @years.each { |year| average += year.to_i }
-    average.fdiv(20).round
-  end
-
-  def set_stats
   end
 
 end
