@@ -19,6 +19,7 @@
         </div>
       </div>
     </div>
+    <span id="typedanswer"></span>
 
   </section>
 
@@ -86,59 +87,6 @@
         <a class="text-green" href="/stats_final"><i class="fab fa-spotify text-lg"></i> Découvre toutes tes stats</a>
       </div>
   </section>
-
-<!--   <div class="flex">
-
-    <div class="flex-auto">
-      You recenlty played :
-      <% @recently_played.each do |song| %>
-        <li><%= song.name %></li>
-      <% end %>
-    </div>
-    <div class="flex-auto">
-      Your top tracks are :
-      <% @top_tracks.each do |song| %>
-        <li><%= song.name %></li>
-      <% end %>
-    </div>
-
-    <div class="flex-auto">
-      Your top artists are :
-      <% @top_artists.each do |artist| %>
-        <li><%= artist.name %> (<%= artist.popularity %>)</li>
-      <% end %>
-    </div>
-  </div> -->
-
-<br>
-<!--   <center><p>Your underground tastes</p></center>
-  <div class="flex">
-    <div class="flex-auto">
-      The least popular tracks among your recent tracks :
-      <% @underground_recent.each do |song| %>
-        <% if song.popularity < 51 %>
-          <li><%= song.name %> (<%= song.popularity %>)</li>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="flex-auto">
-      The least popular tracks among your top :
-      <% @underground_tracks.each do |song| %>
-        <% if song.popularity < 51 %>
-          <li><%= song.name %> (<%= song.popularity %>)</li>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="flex-auto">
-      The least popular artists among your top :
-      <% @underground_artists.each do |artist| %>
-        <% if artist.popularity < 51 %>
-          <li><%= artist.name %> (<%= artist.popularity %>)</li>
-        <% end %>
-      <% end %>
-    </div>
-
-  </div> -->
 <% end %>
 
 

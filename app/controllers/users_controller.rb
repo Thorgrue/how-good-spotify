@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_stats, only: [:spotify]
+  before_action :set_stats, only: [:spotify, :stats_final]
 
   def spotify
   end

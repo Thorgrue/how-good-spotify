@@ -7,22 +7,22 @@ const pickToggle = () => {
     if (choice1 === null || choice2 === null)
       return;
 
+    const pickMe = (un, deux) => {
+      un.classList.remove("border-dashed");
+      un.classList.add("border-white");
+      un.classList.remove("text-black");
+      deux.classList.add("border-dashed");
+      deux.classList.add("text-black");
+      deux.classList.remove("border-white");
+    }
+
     choice1.addEventListener("click", () => {
-      choice1.classList.remove("border-dashed");
-      choice1.classList.add("border-white");
-      choice1.classList.remove("text-black");
-      choice2.classList.add("border-dashed");
-      choice2.classList.add("text-black");
-      choice2.classList.remove("border-white")
+      pickMe(choice1, choice2);
+      choice1.removeEventListener();
     });
 
     choice2.addEventListener("click", () => {
-      choice2.classList.remove("border-dashed");
-      choice2.classList.add("border-white")
-      choice2.classList.remove("text-black");
-      choice1.classList.add("border-dashed");
-      choice1.classList.add("text-black");
-      choice1.classList.remove("border-white");
+      pickMe(choice2, choice1);
     });
   };
 }

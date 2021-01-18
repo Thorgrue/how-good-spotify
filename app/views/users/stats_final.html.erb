@@ -1,1 +1,67 @@
-<h1>Ouéééé</h1>
+<div id="contain" class="container overflow-y-scroll h-full mx-auto w-2/3 p-6">
+  <section class="typewriter6">
+    <h1>Te voilà prêt.e à prendre connaissance du détail de ton Spotify</h1>
+    <p>Toutes tes statistiques</p>
+    <p>Révélées au grand jour</p>
+  <br>
+    <p>Des grand.e.s artistes te remercient d'autant les écouter : </p>
+    <div class="flex-auto">
+      <% @top_tracks[0..4].each do |song| %>
+        <li><%= song.artist[0] %> et la chanson <%= song.name %></li>
+      <% end %>
+    </div>
+
+    <!--   <div class="flex">
+
+    <div class="flex-auto">
+      You recenlty played :
+      <% @recently_played.each do |song| %>
+        <li><%= song.name %></li>
+      <% end %>
+    </div>
+    <div class="flex-auto">
+      Your top tracks are :
+      <% @top_tracks.each do |song| %>
+        <li><%= song.name %></li>
+      <% end %>
+    </div>
+
+    <div class="flex-auto">
+      Your top artists are :
+      <% @top_artists.each do |artist| %>
+        <li><%= artist.name %> (<%= artist.popularity %>)</li>
+      <% end %>
+    </div>
+  </div> -->
+
+<br>
+<!--   <center><p>Your underground tastes</p></center>
+  <div class="flex">
+    <div class="flex-auto">
+      The least popular tracks among your recent tracks :
+      <% @underground_recent.each do |song| %>
+        <% if song.popularity < 51 %>
+          <li><%= song.name %> (<%= song.popularity %>)</li>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="flex-auto">
+      The least popular tracks among your top :
+      <% @underground_tracks.each do |song| %>
+        <% if song.popularity < 51 %>
+          <li><%= song.name %> (<%= song.popularity %>)</li>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="flex-auto">
+      The least popular artists among your top :
+      <% @underground_artists.each do |artist| %>
+        <% if artist.popularity < 51 %>
+          <li><%= artist.name %> (<%= artist.popularity %>)</li>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div> -->
+  </section>
+</div>
