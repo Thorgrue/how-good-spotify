@@ -23,6 +23,8 @@ class UsersController < ApplicationController
   def set_stats
     @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
 
+    @name = @spotify_user.display_name
+
     @recently_played = @spotify_user.recently_played
     @underground_recent = @recently_played.sort_by(&:popularity)
 

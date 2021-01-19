@@ -1,10 +1,11 @@
 <div id="contain" class="container overflow-y-scroll h-full mx-auto w-2/3 p-6">
   <section >
     <div id="typewriter1">
-      <h1>Tu veux savoir à quel point ton Spotify est chouette ?</h1>
+      <h1>Heyy <%= @name %> !</h1>
+      <p>Tu veux savoir à quel point ton Spotify est chouette ?</p>
       <p>Attends un poil, que j'analyse un peu tout ça</p>
       <p>Je suis un petit programme d'IA</p>
-      <p>Et j'ai pour unique but de mettre un peu de <span class="text-lavander font-bold">douceur</span> dans ta journée</p>
+      <p>Et j'ai pour unique but de mettre de la <span class="text-lavander font-bold">douceur</span> dans ta journée</p>
     <br>
       <p>Mais <strong>avant toute chose</strong>, dis moi</p>
       <p>Comment vas tu <strong>vraiment</strong>, là tout de suite ?</p>
@@ -22,7 +23,6 @@
     <span id="typedanswer"></span>
 
   </section>
-
 
   <% if @top_artists.empty? %>
     <h2>Tu n'as aucune musique sur ton Spotify, n'hésite pas à plus l'utiliser !</h2>
@@ -77,16 +77,19 @@
       <p>Bravo!</p>
       <p>Où puises-tu ton inspiration ?</p>
       <p>J'espère que tu partages tes découvertes ! </p>
-  <br>
-      <p>Si tu veux en savoir encore plus sur tes goûts musicaux...</p>
     <% end %>
+  <br>
+      <p>Tu veux en savoir encore plus sur tes goûts musicaux ?</p>
+      <p>Te voilà prêt.e à prendre connaissance du <span class="text-lavander">détail</span> de ton Spotify ?</p>
+      <p>Toutes</p>
+      <p>Tes</p>
+      <p>Statistiques</p>
+      <p>Révélées au grand jour</p>
+  <br>
   </section>
 
-  <section>
-      <div id="btn-stats" class="hidden btn rounded w-96 mx-auto -ml-10">
-        <a class="text-green" href="/stats_final"><i class="fab fa-spotify text-lg"></i> Découvre toutes tes stats</a>
-      </div>
-  </section>
+  <%= render 'shared/stats_final' %>
+
 
 <% end %>
 

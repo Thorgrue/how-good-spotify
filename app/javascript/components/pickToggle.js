@@ -18,7 +18,6 @@ const pickToggle = () => {
 
     choice1.addEventListener("click", () => {
       pickMe(choice1, choice2);
-      choice1.removeEventListener();
     });
 
     choice2.addEventListener("click", () => {

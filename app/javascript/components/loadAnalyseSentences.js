@@ -1,5 +1,6 @@
 import TypeIt from "typeit";
 import scrollAuto from './scrollAuto'
+import loadStats from './loadStats'
 
 const loadAnalyseSentences = (num) => {
   if (document.querySelector(`#typewriter${num}`) === null)
@@ -10,9 +11,11 @@ const loadAnalyseSentences = (num) => {
     waitUntilVisible: true,
     breakLines: true,
     cursor: false,
+    lifeLike: true,
     afterComplete: async (step, instance) => {
       if ((num) === 5) {
         loadStatsButton();
+        loadStats();
       };
       if (document.getElementById(`typewriter${num + 1}`) != null) {
         loadOnClick(num - 1, loadAnalyseSentences(num + 1));

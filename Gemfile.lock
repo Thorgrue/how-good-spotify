@@ -61,6 +61,7 @@ GEM
     autoprefixer-rails (10.1.0.0)
       execjs
     aws_cf_signer (0.1.3)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
@@ -81,6 +82,12 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    devise (4.7.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -146,6 +153,9 @@ GEM
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    omniauth-spotify (0.0.13)
+      omniauth-oauth2 (~> 1.1)
+    orm_adapter (0.5.0)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -195,6 +205,9 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.8.2)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -242,6 +255,8 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -271,10 +286,12 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   cloudinary (~> 1.18)
+  devise
   dotenv-rails
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  omniauth-spotify
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails

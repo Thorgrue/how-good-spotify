@@ -1,12 +1,8 @@
-<div id="typewriter5" class="hidden">
-  <h1>Te voilà prêt.e à prendre connaissance du <span class="text-lavander">détail</span> de ton Spotify</h1>
-  <p>Toutes</p>
-  <p>Tes</p>
-  <p>Statistiques</p>
-  <p>Révélées au grand jour</p>
+<div id="btn-stats" class="hidden btn rounded w-96 mx-auto -ml-10">
+  <p class="text-green"><i class="fab fa-spotify text-lg"></i> Découvre toutes tes stats</p>
 </div>
 
-<div id="typewriter6" class="hidden">
+<section id="allezla" class="hidden">
 <br>
   <p>Des <span class="text-lilac">grand.e.s</span> artistes te remercient d'autant les écouter : </p>
     <% @top_artists[0..6].each do |artist| %>
@@ -30,7 +26,7 @@
   <p>Tu es quelqu'un d'<span class="text-lavander">o</span><span class="text-lilac">r</span><span class="text-peach">i</span><span class="text-coral">g</span><span class="text-apricot">i</span><span class="text-pea">n</span><span class="text-baby-blue">a</span><span class="text-lavander">l</span></p>
   <p>Tu es aussi un avant gardiste</p>
   <p>Voilà tes artistes prefs qui mériteraient d'être plus <span class="text-apricot">connus</span> :</p>
-    <% @underground_artists.each do |artist| %>
+    <% @underground_artists[0..6].each do |artist| %>
       <% if artist.popularity < 51 %>
         <li><%= artist.name %> (popularité : <%= artist.popularity %>/100)</li>
       <% end %>
@@ -38,23 +34,21 @@
 <br>
   <p>Y'a aussi ces quelques sons, si tu continues à autant les écouter</p>
   <p>Ils finiront forcément par <span class="text-pea">décoller</span> !</p>
-    <% @underground_tracks.each do |song| %>
+    <% @underground_tracks[0..6].each do |song| %>
       <% if song.popularity < 51 %>
         <li><%= song.name %> (popularité : <%= song.popularity %>/100)</li>
       <% end %>
     <% end %>
 <br>
   <p>Tu viens de goûter ces <span class="text-baby-blue">pépites</span> encore inconnues</p>
-  <% @underground_recent.each do |song| %>
+  <% @underground_recent[0..6].each do |song| %>
       <% if song.popularity < 51 %>
         <li><%= song.name %> (popularité : <%= song.popularity %>/100)</li>
       <% end %>
     <% end %>
   <p>Ta mission, si tu l'acceptes et de faire partager ces perles</p>
 <br>
-</div>
 
-<section id="typewriter7" class="hidden">
   <p>Quant à moi, ma mission s'arrête ici</p>
 <br>
   <p>J'ai passé <%= @time_spent %> délicieuses secondes à analyser</p>
