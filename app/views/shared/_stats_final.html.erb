@@ -4,49 +4,62 @@
 
 <section id="allezla" class="hidden">
 <br>
-  <p>Des <span class="text-lilac">grand.e.s</span> artistes te remercient d'autant les écouter : </p>
-    <% @top_artists[0..6].each do |artist| %>
-      <li><em><%= artist.name %></em></li>
+  <p>Des grand.e.s artistes te remercient d'autant les écouter : </p>
+  <ul class="list-inside list-disc pl-6">
+    <% @top_artists[0..4].each_with_index do |artist, i| %>
+      <li class="<%= @color_array[i] %>"><%= artist.name %></li>
       <!--  ce serait fou que chaque titre soit d'une couleur différente -->
     <% end %>
+  </ul>
 <br>
-  <p>Tu dois faire au moins <span class="text-peach">53%</span> des écoutes de ces titres : </p>
-  <% @top_tracks[0..6].each do |song| %>
-      <li><em><%= song.name %></em> de <strong><%= song.artists[0].name %></strong></li>
-      <!--  ce serait fou que chaque nom d'auteurs soit d'une couleur différente -->
-  <% end %>
+  <p>Tu les écoutes bokou et c'est trop cool </p>
+  <ul class="list-inside list-disc pl-6">
+    <% @top_tracks[0..4].each_with_index do |song, i| %>
+        <li class="<%= @color_array[i < 2 ? (i + 5) : (i - 2)] %>"><em><%= song.name %></em> de <strong><%= song.artists[0].name %></strong></li>
+        <!--  ce serait fou que chaque nom d'auteurs soit d'une couleur différente -->
+    <% end %>
+  </ul>
 <br>
-  <p>On me dit dans l'<span class="text-coral">oreillette</span> que tu as fait de chouettes découvertes récemment </p>
-    <% @recently_played[0..6].each do |song| %>
-      <li><em><%= song.name %></em></li>
+  <p>On me dit dans l'oreillette que tu as fait de chouettes découvertes récemment </p>
+  <ul class="list-inside list-disc pl-6">
+    <% @recently_played[0..4].each_with_index do |song, i| %>
+      <li class="<%= @color_array[i < 4 ? (i + 3) : (i - 4)] %>"><em><%= song.name %></em></li>
       <!--  ce serait fou que chaque titre soit d'une couleur différente -->
     <% end %>
+  </ul>
 <br>
   <p>Je te le disais tout à l'heure</p>
   <p>Tu es quelqu'un d'<span class="text-lavander">o</span><span class="text-lilac">r</span><span class="text-peach">i</span><span class="text-coral">g</span><span class="text-apricot">i</span><span class="text-pea">n</span><span class="text-baby-blue">a</span><span class="text-lavander">l</span></p>
   <p>Tu es aussi un avant gardiste</p>
-  <p>Voilà tes artistes prefs qui mériteraient d'être plus <span class="text-apricot">connus</span> :</p>
-    <% @underground_artists[0..6].each do |artist| %>
+<br>
+  <p>Voilà tes artistes prefs qui mériteraient d'être plus <span class="text-lilac">connus</span> :</p>
+  <ul class="list-inside list-disc pl-6">
+    <% @underground_artists[0..4].each do |artist| %>
       <% if artist.popularity < 51 %>
-        <li><%= artist.name %> (popularité : <%= artist.popularity %>/100)</li>
+        <li><%= artist.name %> <em>(popularité : <%= artist.popularity %>/100)</em></li>
       <% end %>
     <% end %>
+  </ul>
 <br>
   <p>Y'a aussi ces quelques sons, si tu continues à autant les écouter</p>
-  <p>Ils finiront forcément par <span class="text-pea">décoller</span> !</p>
-    <% @underground_tracks[0..6].each do |song| %>
-      <% if song.popularity < 51 %>
-        <li><%= song.name %> (popularité : <%= song.popularity %>/100)</li>
+  <p>Ils finiront forcément par <span class="text-peach">décoller</span> !</p>
+  <ul class="list-inside list-disc pl-6">
+    <% @underground_tracks[0..4].each do |song| %>
+      <% if song.popularity < 51 && song.popularity != 0%>
+        <li><%= song.name %> <em>(popularité : <%= song.popularity %>/100)</em></li>
       <% end %>
     <% end %>
+  </ul>
 <br>
-  <p>Tu viens de goûter ces <span class="text-baby-blue">pépites</span> encore inconnues</p>
-  <% @underground_recent[0..6].each do |song| %>
+  <p>Tu viens de goûter ces <span class="text-coral">pépites</span> encore inconnues</p>
+  <ul class="list-inside list-disc pl-6">
+  <% @underground_recent[0..3].each do |song| %>
       <% if song.popularity < 51 %>
-        <li><%= song.name %> (popularité : <%= song.popularity %>/100)</li>
+        <li><%= song.name %> <em>(popularité : <%= song.popularity %>/100)</em></li>
       <% end %>
     <% end %>
-  <p>Ta mission, si tu l'acceptes et de faire partager ces perles</p>
+  </ul>
+  <p>Ta mission, si tu l'acceptes et de faire <span class="text-pea">partager</span> ces perles</p>
 <br>
 
   <p>Quant à moi, ma mission s'arrête ici</p>

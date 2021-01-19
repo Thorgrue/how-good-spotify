@@ -6,7 +6,7 @@ const loadAnalyseSentences = (num) => {
   if (document.querySelector(`#typewriter${num}`) === null)
     return
   const type = new TypeIt(`#typewriter${num}`, {
-    speed: 40,
+    speed: 1,
     loop: false,
     waitUntilVisible: true,
     breakLines: true,
@@ -61,7 +61,7 @@ const loadOnClick = (num, func) => {
     };
   });
 
-  scrollAuto();
+  scrollAuto(num);
 
 };
 

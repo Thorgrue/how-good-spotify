@@ -6,4 +6,6 @@ const typeStats = () => {
   });
 };
 
+
+
 export default typeStats
