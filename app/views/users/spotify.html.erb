@@ -51,6 +51,7 @@
       <p>Comment tu as découvert <span class="text-apricot font-bold"><%= thot.artists[0].name %></span> ?</p>
     <br>
       <h2>Viens on joue à un jeu ! Qui de l'oeuf ou de la poule ?</h2>
+      <p>Tu vas voir, c'est tout simple</p>
       <p>Qu'as-tu découvert en premier ?</p>
     </section>
 
@@ -58,7 +59,8 @@
   <%= render 'shared/game' %>
 
   <section id="typewriter5" class="hidden">
-    <p>Bien joué bg ! </p>
+    <p>Ah ouais ? Marrant</p>
+    <p>Mais bien joué bg !</p>
   <br>
     <% recently = @recently_played.sample %>
     <p>C'est marrant que t'écoutes <em><%= recently.name %></em> !</p>

@@ -51,7 +51,8 @@
 
   <p>Quant à moi, ma mission s'arrête ici</p>
 <br>
-  <p>J'ai passé <%= @time_spent %> délicieuses secondes à analyser</p>
+  <% time_end = Time.now %>
+  <p>J'ai passé <span class="text-lavander"><%= ((time_end - @time_begin) * 10000).round %></span> délicieuses millisecondes à analyser</p>
   <p>Les statistiques de <span class="text-peach">t</span><span class="text-coral">o</span><span class="text-apricot">n</span> Spotify !</p>
   <p>Merci pour ce moment</p>
 <br>

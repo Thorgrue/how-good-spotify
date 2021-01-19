@@ -2,11 +2,10 @@ class UsersController < ApplicationController
   before_action :set_stats, only: [:spotify, :stats_final]
 
   def spotify
+    @time_begin = Time.now
   end
 
   def stats_final
-    now = Time.now
-    @time_spent = (now - @spotify_user.created_at)
   end
 
   def test
