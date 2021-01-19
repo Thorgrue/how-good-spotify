@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_stats, only: [:spotify, :stats_final]
+  # before_action :set_stats, only: [:spotify, :stats_final]
 
   def spotify
+    current_user.spotify_data = request.env['omniauth.auth']
+    raise
   end
 
   def stats_final
@@ -22,6 +24,11 @@ class UsersController < ApplicationController
 
   def set_stats
     @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+
+    current_user.spotify_data = @spotify_user
+    current_user.save
+
+    @name = @spotify_user.display_name
 
     @recently_played = @spotify_user.recently_played
     @underground_recent = @recently_played.sort_by(&:popularity)
