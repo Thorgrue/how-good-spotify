@@ -4,21 +4,22 @@
       <h1>Tu veux savoir à quel point ton Spotify est chouette ?</h1>
       <p>Attends un poil, que j'analyse un peu tout ça</p>
       <p>Je suis un petit programme d'IA</p>
-      <p>J'ai pour unique but de mettre un peu de <span class="text-lavander font-bold">douceur</span> dans ta journée</p>
+      <p>Et j'ai pour unique but de mettre un peu de <span class="text-lavander font-bold">douceur</span> dans ta journée</p>
     <br>
       <p>Mais <strong>avant toute chose</strong>, dis moi</p>
       <p>Comment vas tu <strong>vraiment</strong>, là tout de suite ?</p>
     </div>
     <div class="flex justify-end">
       <div class="flex justify-between w-2/5">
-        <div id="toggle_pick0a" class="hidden flex flex-col items-center hvr-wobble-top p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+        <div id="toggle_pick0a" class="hidden flex flex-col items-center hvr-wobble-top m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
           <p>Au top du pop</p>
         </div>
-        <div id="toggle_pick0b" class="hidden flex flex-col items-center hvr-wobble-top border-2 p-3 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+        <div id="toggle_pick0b" class="hidden flex flex-col items-center hvr-wobble-top m-2 border-2 p-3 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
           <p>Bah.. pas si ouf</p>
         </div>
       </div>
     </div>
+    <span id="typedanswer"></span>
 
   </section>
 
@@ -45,12 +46,12 @@
       <p>Entre nous, <em><%= that.album.name %></em> de <span class="text-coral font-bold"><%= that.album.artists[0].name %></span>, best album de <%= that.album.release_date.slice(0..3) %> !</p>
     <br>
       <% thot = @top_tracks.sample %>
-      <p>Ah, je te reconnais bien là</p>
+      <p>Ahh, je te reconnais bien là</p>
       <p>Fin.e connaisseur.se de <em><%= thot.artists[0].genres[0] %></em> héhé</p>
       <p>Comment tu as découvert <span class="text-apricot font-bold"><%= thot.artists[0].name %></span> ?</p>
     <br>
       <h2>Viens on joue à un jeu ! Qui de l'oeuf ou de la poule ?</h2>
-      <p>Qu'est-ce que tu as découvert en premier ?</p>
+      <p>Qu'as-tu découvert en premier ?</p>
     </section>
 
 
@@ -67,71 +68,26 @@
     <p>Who, pourtant y'en a pas grand monde qui connait !</p>
     <p>Bravo pour ton ouverture d'oreille 🤗</p>
   <br>
-    <p>Au vu de ce que tu écoutes, tu retournerai bien en <%= @stuck_years %> ! </p>
+    <p>Au vu de ce que tu écoutes, tu retournerai bien en <em><%= @stuck_years %></em> ! </p>
     <p>Tu m'étonnes, y'a quand même eu l'album de <span class="text-baby-blue"><%= @stuck_years_artist %></span> </p>
   <br>
     <% if @original_complex < 51 %>
       <p>Whawww je suis bluffé !</p>
-      <p>Ton Spotify est composé à <%= (100 - @original_complex) %>% de contenu <span class="text-lavander">o</span><span class="text-lilac">r</span><span class="text-peach">i</span><span class="text-coral">g</span><span class="text-apricot">i</span><span class="text-pea">n</span><span class="text-baby-blue">a</span><span class="text-lavander">l</span></p>
+      <p>Ton Spotify est composé à <span class="text-coral"><%= (100 - @original_complex) %>%</span> de contenu <span class="text-lavander">o</span><span class="text-lilac">r</span><span class="text-peach">i</span><span class="text-coral">g</span><span class="text-apricot">i</span><span class="text-pea">n</span><span class="text-baby-blue">a</span><span class="text-lavander">l</span></p>
       <p>Bravo!</p>
       <p>Où puises-tu ton inspiration ?</p>
       <p>J'espère que tu partages tes découvertes ! </p>
-    <% end %>
   <br>
+      <p>Si tu veux en savoir encore plus sur tes goûts musicaux...</p>
+    <% end %>
   </section>
 
-<!--   <div class="flex">
+  <section>
+      <div id="btn-stats" class="hidden btn rounded w-96 mx-auto -ml-10">
+        <a class="text-green" href="/stats_final"><i class="fab fa-spotify text-lg"></i> Découvre toutes tes stats</a>
+      </div>
+  </section>
 
-    <div class="flex-auto">
-      You recenlty played :
-      <% @recently_played.each do |song| %>
-        <li><%= song.name %></li>
-      <% end %>
-    </div>
-    <div class="flex-auto">
-      Your top tracks are :
-      <% @top_tracks.each do |song| %>
-        <li><%= song.name %></li>
-      <% end %>
-    </div>
-
-    <div class="flex-auto">
-      Your top artists are :
-      <% @top_artists.each do |artist| %>
-        <li><%= artist.name %> (<%= artist.popularity %>)</li>
-      <% end %>
-    </div>
-  </div> -->
-
-<br>
-<!--   <center><p>Your underground tastes</p></center>
-  <div class="flex">
-    <div class="flex-auto">
-      The least popular tracks among your recent tracks :
-      <% @underground_recent.each do |song| %>
-        <% if song.popularity < 51 %>
-          <li><%= song.name %> (<%= song.popularity %>)</li>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="flex-auto">
-      The least popular tracks among your top :
-      <% @underground_tracks.each do |song| %>
-        <% if song.popularity < 51 %>
-          <li><%= song.name %> (<%= song.popularity %>)</li>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="flex-auto">
-      The least popular artists among your top :
-      <% @underground_artists.each do |artist| %>
-        <% if artist.popularity < 51 %>
-          <li><%= artist.name %> (<%= artist.popularity %>)</li>
-        <% end %>
-      <% end %>
-    </div>
-
-  </div> -->
 <% end %>
 
 

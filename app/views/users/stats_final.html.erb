@@ -1,0 +1,65 @@
+<section class="typewriter6" class=hidden>
+  <h1>Te voilà prêt.e à prendre connaissance du <span class="text-lavander">détail</span> de ton Spotify</h1>
+  <p>Toutes</p>
+  <p>Tes</p>
+  <p>Statistiques</p>
+  <p>Révélées au grand jour</p>
+<br>
+  <p>Des <span class="text-lilac">grand.e.s</span> artistes te remercient d'autant les écouter : </p>
+    <% @top_artists[0..6].each do |artist| %>
+      <li><em><%= artist.name %></em></li>
+      <!--  ce serait fou que chaque titre soit d'une couleur différente -->
+    <% end %>
+<br>
+  <p>Tu dois faire au moins <span class="text-peach">53%</span> des écoutes de ces titres : </p>
+  <% @top_tracks[0..6].each do |song| %>
+      <li><em><%= song.name %></em> de <strong><%= song.artists[0].name %></strong></li>
+      <!--  ce serait fou que chaque nom d'auteurs soit d'une couleur différente -->
+  <% end %>
+<br>
+  <p>On me dit dans l'<span class="text-coral">oreillette</span> que tu as fait de chouettes découvertes récemment </p>
+    <% @recently_played[0..6].each do |song| %>
+      <li><em><%= song.name %></em></li>
+      <!--  ce serait fou que chaque titre soit d'une couleur différente -->
+    <% end %>
+<br>
+  <p>Je te le disais tout à l'heure</p>
+  <p>Tu es quelqu'un d'<span class="text-lavander">o</span><span class="text-lilac">r</span><span class="text-peach">i</span><span class="text-coral">g</span><span class="text-apricot">i</span><span class="text-pea">n</span><span class="text-baby-blue">a</span><span class="text-lavander">l</span></p>
+  <p>Tu es aussi un avant gardiste</p>
+  <p>Voilà tes artistes prefs qui mériteraient d'être plus <span class="text-apricot">connus</span> :</p>
+    <% @underground_artists.each do |artist| %>
+      <% if artist.popularity < 51 %>
+        <li><%= artist.name %> (popularité : <%= artist.popularity %>/100)</li>
+      <% end %>
+    <% end %>
+<br>
+  <p>Y'a aussi ces quelques sons, si tu continues à autant les écouter</p>
+  <p>Ils finiront forcément par <span class="text-pea">décoller</span> !</p>
+    <% @underground_tracks.each do |song| %>
+      <% if song.popularity < 51 %>
+        <li><%= song.name %> (popularité : <%= song.popularity %>/100)</li>
+      <% end %>
+    <% end %>
+<br>
+  <p>Tu viens de faire goûter ces petites <span class="text-baby-blue">pépites</span> encore inconnues</p>
+  <% @underground_recent.each do |song| %>
+      <% if song.popularity < 51 %>
+        <li><%= song.name %> (popularité : <%= song.popularity %>/100)</li>
+      <% end %>
+    <% end %>
+  <p>Ta mission, si tu l'acceptes et de faire partager ces perles</p>
+<br>
+</section>
+
+<section class="typewriter7" class="hidden">
+  <p>Quant à moi, ma mission s'arrête ici</p>
+<br>
+  <p>J'ai passé <%= @time_spent %> délicieuses secondes à analyser</p>
+  <p>Les statistiques de <span class="text-peach">t</span><span class="text-coral">o</span><span class="text-apricot">n</span> Spotify !</p>
+  <p>Merci pour ce moment</p>
+<br>
+  <p>J'espère que tu as également apprécié ma compagnie</p>
+  <p>N'hésite pas à me partager avec des copains si tu as aimé l'expérience !</p>
+  <p>Bonne journée, prends soin de toi</p>
+  <p><span class="text-lavander">B</span><span class="text-lilac">I</span><span class="text-peach">S</span><span class="text-coral">O</span><span class="text-apricot">U</span><span class="text-pea">S</span></p>
+</section>
