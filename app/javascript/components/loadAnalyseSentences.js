@@ -5,17 +5,17 @@ const loadAnalyseSentences = (num) => {
   if (document.querySelector(`#typewriter${num}`) === null)
     return
   const type = new TypeIt(`#typewriter${num}`, {
-    speed: 20,
+    speed: 40,
     loop: false,
     waitUntilVisible: true,
     breakLines: true,
     cursor: false,
     afterComplete: async (step, instance) => {
-      if (document.getElementById(`typewriter${num + 1}`) != null) {
-        loadOnClick(num - 1, loadAnalyseSentences(num + 1));
-      };
       if ((num) === 5) {
         loadStatsButton();
+      };
+      if (document.getElementById(`typewriter${num + 1}`) != null) {
+        loadOnClick(num - 1, loadAnalyseSentences(num + 1));
       };
     }
   })

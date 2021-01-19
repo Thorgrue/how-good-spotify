@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   end
 
   def stats_final
+    now = Time.now
+    @time_spent = (now - @spotify_user.created_at)
   end
 
   def test
@@ -19,18 +21,18 @@ class UsersController < ApplicationController
   end
 
   def set_stats
-    spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
 
-    @recently_played = spotify_user.recently_played
+    @recently_played = @spotify_user.recently_played
     @underground_recent = @recently_played.sort_by(&:popularity)
 
-    @top_artists = spotify_user.top_artists(limit: 10, offset: 0, time_range: 'long_term')  #=> (Artist array)
+    @top_artists = @spotify_user.top_artists(limit: 10, offset: 0, time_range: 'long_term')  #=> (Artist array)
     @underground_artists = @top_artists.sort_by(&:popularity)
 
-    @top_tracks = spotify_user.top_tracks(limit: 20, time_range: 'long_term') #=> (Track array)
+    @top_tracks = @spotify_user.top_tracks(limit: 20, time_range: 'long_term') #=> (Track array)
     @underground_tracks = @top_tracks.sort_by(&:popularity)
 
-    @most_underground = spotify_user.top_artists(limit: 50, offset: 0, time_range: 'long_term').sort_by { |artist| artist.popularity }
+    @most_underground = @spotify_user.top_artists(limit: 50, offset: 0, time_range: 'long_term').sort_by { |artist| artist.popularity }
 
     @years = @top_tracks.map { |track| track.album.release_date.slice(0..3) }
     @stuck_years = average_year
