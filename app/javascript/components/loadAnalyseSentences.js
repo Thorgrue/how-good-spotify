@@ -6,11 +6,12 @@ const loadAnalyseSentences = (num) => {
   if (document.querySelector(`#typewriter${num}`) === null)
     return
   const type = new TypeIt(`#typewriter${num}`, {
-    speed: 10,
+    speed: 40,
     loop: false,
     waitUntilVisible: true,
     breakLines: true,
     cursor: false,
+    lifeLike: true,
     afterComplete: async (step, instance) => {
       if ((num) === 5) {
         loadStatsButton();
