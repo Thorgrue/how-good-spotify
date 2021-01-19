@@ -65,3 +65,4 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem "cloudinary", "~> 1.18"
 gem 'devise'
+gem 'omniauth-spotify'
