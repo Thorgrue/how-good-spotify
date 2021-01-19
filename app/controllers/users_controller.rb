@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def spotify
     @time_begin = Time.now
+    @color_array = ['text-lavander', 'text-lilac', 'text-peach', 'text-coral', 'text-apricot', 'text-pea', 'text-baby-blue']
   end
 
   def stats_final

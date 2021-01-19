@@ -1,0 +1,30 @@
+<div class="flex justify-center content-around px-7 py-2 bg-gray-300 w-8 rounded-xl">
+  <div id="r1" class="p-1 bg-gray-400 rounded-full"></div>
+  <div id="r2" class="ml-1 p-1 bg-gray-400 rounded-full"></div>
+  <div id="r3" class="ml-1 p-1 bg-gray-400 rounded-full"></div>
+</div>
+
+<script>
+  const typeIndication = (i) => {
+    const rond_now = document.getElementById(`r${i}`);
+    const rond_3 = document.getElementById('r3')
+    setTimeout(() => {
+      if (i === 1) {
+        rond_3.classList.remove('bg-gray-500');
+        rond_3.classList.add('bg-gray-400');
+      };
+      rond_now.classList.remove('bg-gray-400');
+      rond_now.classList.add('bg-gray-500');
+      if (i > 1) {
+        const rond_past = document.getElementById(`r${i - 1}`)
+        rond_past.classList.remove('bg-gray-500');
+        rond_past.classList.add('bg-gray-400');
+      };
+      if (i === 3) {
+        i = 0
+      };
+      typeIndication(i + 1);
+    }, 300);
+  }
+  typeIndication(1)
+</script>
