@@ -51,7 +51,7 @@
     <% end %>
   </ul>
 <br>
-  <p>Tu viens de goûter ces <span class="text-coral">pépites</span> encore inconnues</p>
+  <p>Tu viens de dénicher ces <span class="text-coral">pépites</span> encore inconnues</p>
   <ul class="list-inside list-disc pl-6">
   <% @underground_recent[0..3].each do |song| %>
       <% if song.popularity < 51 %>
@@ -59,18 +59,17 @@
       <% end %>
     <% end %>
   </ul>
-  <p>Ta mission, si tu l'acceptes et de faire <span class="text-pea">partager</span> ces perles</p>
+  <p>Ta <span class="text-apricot">mission</span>, si tu l'acceptes et de faire <span class="text-pea">partager</span> ces perles</p>
 <br>
 
-  <p>Quant à moi, ma mission s'arrête ici</p>
-<br>
+  <p>Quant à moi, ma <span class="text-baby-blue">mission</span> s'arrête ici</p>
   <% time_end = Time.now %>
-  <p>J'ai passé <span class="text-lavander"><%= ((time_end - @time_begin) * 10000).round %></span> délicieuses millisecondes à analyser</p>
-  <p>Les statistiques de <span class="text-peach">t</span><span class="text-coral">o</span><span class="text-apricot">n</span> Spotify !</p>
-  <p>Merci pour ce moment</p>
+  <p>J'ai passé <span class="font-bold text-lavander"><%= ((time_end - @time_begin) * 10000).round %></span> délicieuses millisecondes à analyser les statistiques de ton Spotify !</p>
+  <p><span class="text-lavander">M</span><span class="text-lilac">e</span><span class="text-peach">r</span><span class="text-coral">c</span><span class="text-apricot">i</span> pour ce moment</p>
 <br>
-  <p>J'espère que tu as également apprécié ma compagnie</p>
-  <p>N'hésite pas à me partager avec des copains si tu as aimé l'expérience !</p>
+  <p>J'espère que tu as également apprécié ma <em>compagnie</em></p>
+  <p>N'hésite pas à me partager avec des copains si tu as <em>aimé</em> l'expérience !</p>
+<br>
   <p>Bonne journée, prends soin de toi</p>
-  <p><span class="text-lavander">B</span><span class="text-lilac">I</span><span class="text-peach">S</span><span class="text-coral">O</span><span class="text-apricot">U</span><span class="text-pea">S</span></p>
+  <p><span class="text-pea">B</span><span class="text-baby-blue">i</span><span class="text-lavander">s</span><span class="text-lilac">o</span><span class="text-peach">u</span><span class="text-coral">s</span> <span class="text-apricot">à</span> <span class="text-pea">t</span><span class="text-baby-blue">o</span><span class="text-lavander">i</span></p>
 </section>
