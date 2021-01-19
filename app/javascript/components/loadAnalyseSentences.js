@@ -36,9 +36,14 @@ const loadOnClick = (num, func) => {
   toggleA.addEventListener('click', () => {
     if (num === 0) {
       answerGood();
-    };
+      setTimeout(() => {
+        textHidden.classList.remove('hidden');
+        func;
+      }, 1500);
+    } else {
     textHidden.classList.remove('hidden');
     func;
+    };
   });
 
   toggleB.classList.remove('hidden');
@@ -46,9 +51,14 @@ const loadOnClick = (num, func) => {
   toggleB.addEventListener('click', () => {
     if (num === 0) {
       answerBad();
-    };
+      setTimeout(() => {
+        textHidden.classList.remove('hidden');
+        func;
+      }, 5500);
+    } else {
     textHidden.classList.remove('hidden');
     func;
+    };
   });
 
   scrollAuto();
