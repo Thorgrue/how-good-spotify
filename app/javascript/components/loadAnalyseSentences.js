@@ -96,6 +96,8 @@ const answerBad = () => {
   .type("Gros courage")
   .break({delay: 200})
   .type("En attendant, j'espère pouvoir t'apporter un peu de joie en analysant ton compte")
+  .break({delay: 200})
+  .type("Allez, on y va !")
   .go();
 };
 
