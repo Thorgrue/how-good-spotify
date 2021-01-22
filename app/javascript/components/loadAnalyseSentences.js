@@ -1,6 +1,7 @@
 import TypeIt from "typeit";
 import scrollAuto from './scrollAuto'
 import loadStats from './loadStats'
+import typingIndicator from './typingIndicator'
 
 const loadAnalyseSentences = (num) => {
   if (document.querySelector(`#typewriter${num}`) === null)
@@ -39,10 +40,10 @@ const loadOnClick = (num, func) => {
       setTimeout(() => {
         textHidden.classList.remove('hidden');
         func;
-      }, 1500);
+      }, 2500);
     } else {
-    textHidden.classList.remove('hidden');
-    func;
+      textHidden.classList.remove('hidden');
+      func;
     };
   });
 
@@ -54,7 +55,7 @@ const loadOnClick = (num, func) => {
       setTimeout(() => {
         textHidden.classList.remove('hidden');
         func;
-      }, 5500);
+      }, 7000);
     } else {
     textHidden.classList.remove('hidden');
     func;
@@ -72,6 +73,9 @@ const answerGood = () => {
     waitUntilVisible: true,
     breakLines: true,
     cursor: false,
+    afterComplete: async (step, instance) => {
+      typingIndicator();
+    }
   })
   .type('Parfait', {delay: 100})
   .break({delay: 200})
@@ -86,6 +90,9 @@ const answerBad = () => {
     waitUntilVisible: true,
     breakLines: true,
     cursor: false,
+    afterComplete: async (step, instance) => {
+      typingIndicator();
+    }
   })
   .type('Argh', {delay: 100})
   .break({delay: 200})
@@ -97,7 +104,7 @@ const answerBad = () => {
   .break({delay: 200})
   .type("En attendant, j'espère pouvoir t'apporter un peu de joie en analysant ton compte")
   .break({delay: 200})
-  .type("Allez, on y va !")
+  .type("Allez, on y va !", {delay: 200})
   .go();
 };
 
