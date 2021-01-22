@@ -82,15 +82,9 @@
 
   <%= render 'shared/game' %>
 
-<!--   <div id="typing_indicator2" class="hidden">
-    <%= render 'shared/typing_indicator' %>
-  </div> -->
+  <span id="typedthirdgame"></span>
 
   <section id="typewriter5" class="hidden">
-    <p>Ah ouais ? Intéressant !</p>
-    <p>En tout cas, bien joué bg !</p>
-  <br>
-
     <% recent_track1 = @recently_played.sample %>
     <% delete_element(@most_underground, recent_track1.album.artists[0]) %>
 
@@ -123,14 +117,11 @@
   <br>
   </section>
 
-<!--   <div id="typing_indicator3" class="hidden">
-    <%= render 'shared/typing_indicator' %>
-  </div> -->
+  <%= render 'shared/stats_final' %>
 
   <div id="typing_indicator1" class="hidden">
     <%= render 'shared/typing_indicator' %>
   </div>
-  <%= render 'shared/stats_final' %>
 
 
 <% end %>

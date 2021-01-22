@@ -1,10 +1,14 @@
 const typingIndicator = () => {
   const typing = document.getElementById('typing_indicator1');
-  typing.classList.remove('hidden');
-    setTimeout(() => {
-      typing.classList.add('hidden');
+  const elem = document.getElementById('contain');
 
-    }, 1000);
+  typing.classList.remove('hidden');
+  elem.scrollTop += 200;
+
+  setTimeout(() => {
+    typing.classList.add('hidden');
+
+  }, 1000);
 }
 
 export default typingIndicator

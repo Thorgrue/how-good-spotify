@@ -1,7 +1,7 @@
 import TypeIt from "typeit";
-import scrollAuto from './scrollAuto'
 import loadStats from './loadStats'
 import typingIndicator from './typingIndicator'
+import loadStatsButton from './loadStatsButton'
 
 const loadAnalyseSentences = (num) => {
   if (document.querySelector(`#typewriter${num}`) === null)
@@ -13,7 +13,13 @@ const loadAnalyseSentences = (num) => {
     breakLines: true,
     cursor: false,
     lifeLike: true,
+    afterStep: async (step, instance) => {
+      const elem = document.getElementById('contain');
+      elem.scrollTop += 15;
+    },
     afterComplete: async (step, instance) => {
+      const elem = document.getElementById('contain');
+      elem.scrollTop += 10;
       if ((num) === 5) {
         loadStatsButton();
         loadStats();
@@ -33,6 +39,8 @@ const loadOnClick = (num, func) => {
 
 
   toggleA.classList.remove('hidden');
+  const elem = document.getElementById('contain');
+  elem.scrollTop += 200;
 
   toggleA.addEventListener('click', () => {
     if (num === 0) {
@@ -41,6 +49,12 @@ const loadOnClick = (num, func) => {
         textHidden.classList.remove('hidden');
         func;
       }, 2500);
+    } else if (num === 3) {
+          thirdgame();
+        setTimeout(() => {
+        textHidden.classList.remove('hidden');
+          func;
+        }, 3000);
     } else {
       textHidden.classList.remove('hidden');
       func;
@@ -61,9 +75,6 @@ const loadOnClick = (num, func) => {
     func;
     };
   });
-
-  scrollAuto(num);
-
 };
 
 const answerGood = () => {
@@ -108,13 +119,28 @@ const answerBad = () => {
   .go();
 };
 
-const loadStatsButton = () => {
-  if (document.getElementById('btn-stats') === null)
-    return
-  const button = document.getElementById('btn-stats');
-  setTimeout(() => {
-    button.classList.remove('hidden');
-  }, 100);
+const thirdgame = () => {
+
+  const type = new TypeIt("#typedthirdgame", {
+    speed: 20,
+    loop: false,
+    waitUntilVisible: true,
+    breakLines: true,
+    cursor: false,
+    afterStep: async (step, instance) => {
+      const elem = document.getElementById('contain');
+      elem.scrollTop += 200;
+    },
+    afterComplete: async (step, instance) => {
+      typingIndicator();
+    }
+  })
+  .type('Ah ouais ? Intéressant !', {delay: 100})
+  .break({delay: 200})
+  .type("En tout cas, bien joué bg !", {delay: 100})
+  .break({delay: 100})
+  .go();
 };
+
 
 export default loadAnalyseSentences;
