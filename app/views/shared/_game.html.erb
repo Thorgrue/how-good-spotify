@@ -1,11 +1,11 @@
 <% jeu1 = @top_tracks[10] %>
 <div class="flex justify-end">
   <div class="flex justify-between w-2/5">
-    <div id="toggle_pick1a" class="hidden flex flex-col items-center hvr-skew-forward m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+    <div id="toggle_pick1a" class="toggle_pick hidden flex flex-col items-center hvr-skew-forward m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
       <center><p><%= jeu1.name %></p></center>
       <img src="<%= jeu1.album.images[2]["url"] %>" class="rounded-lg h-20">
     </div>
-    <div id="toggle_pick1b" class="hidden flex flex-col items-center hvr-skew-backward m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+    <div id="toggle_pick1b" class="toggle_pick hidden flex flex-col items-center hvr-skew-backward m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
       <center><p><%= jeu1.artists[0].name %></p></center>
       <img src="<%= jeu1.artists[0].images.last["url"] %>" class="rounded-lg h-20">
     </div>
@@ -19,11 +19,11 @@
 <% jeu2 = @top_tracks[8] %>
 <div class="flex justify-end">
   <div class="flex justify-between w-2/5">
-    <div id="toggle_pick2a" class="hidden flex flex-col items-center hvr-wobble-top m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+    <div id="toggle_pick2a" class="toggle_pick hidden flex flex-col items-center hvr-wobble-top m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
       <center><p><%= jeu2.name %></p></center>
       <img src="<%= jeu2.album.images[2]["url"] %>" class="rounded-lg h-20">
     </div>
-    <div id="toggle_pick2b" class="hidden flex flex-col items-center hvr-wobble-top border-2 m-2 p-3 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+    <div id="toggle_pick2b" class="toggle_pick hidden flex flex-col items-center hvr-wobble-top border-2 m-2 p-3 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
       <center><p><%= jeu2.artists[0].name %></p></center>
       <img src="<%= jeu2.artists[0].images.last["url"] %>" class="rounded-lg h-20">
     </div>
@@ -34,14 +34,14 @@
   <p>Ah ben tiens ! Tout pareil héhé </p>
   <p>Un ptit dernier pour la route ?</p>
 </div>
-<% jeu3 = @top_tracks[17] %>
+<% jeu3 = @top_tracks[16] %>
 <div class="flex justify-end">
   <div class="flex justify-between w-2/5">
-    <div id="toggle_pick3a" class="hidden flex flex-col items-center hvr-wobble-top m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+    <div id="toggle_pick3a" class="toggle_pick hidden flex flex-col items-center hvr-wobble-top m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
       <center><p><%= jeu3.name %></p></center>
       <img src="<%= jeu3.album.images[2]["url"] %>" class="rounded-lg h-20">
     </div>
-    <div id="toggle_pick3b" class="hidden flex flex-col items-center hvr-wobble-top m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
+    <div id="toggle_pick3b" class="toggle_pick hidden flex flex-col items-center hvr-wobble-top m-2 p-3 border-2 border-dashed border-black border-opacity-100 rounded-lg shadow-inner-xl">
       <center><p><%= jeu3.artists[0].name %></p></center>
       <img src="<%= jeu3.artists[0].images.last["url"] %>" class="rounded-lg h-20">
     </div>

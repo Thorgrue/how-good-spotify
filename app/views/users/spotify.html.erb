@@ -24,7 +24,6 @@
 
   </section>
 
-<!-- <%= render 'shared/typing_indicator' %> -->
 
   <% if @top_artists.empty? %>
     <h2>Tu n'as aucune musique sur ton Spotify, n'hésite pas à plus l'utiliser !</h2>
@@ -83,11 +82,9 @@
 
   <%= render 'shared/game' %>
 
-  <section id="typewriter5" class="hidden">
-    <p>Ah ouais ? Intéressant !</p>
-    <p>En tout cas, bien joué bg !</p>
-  <br>
+  <span id="typedthirdgame"></span>
 
+  <section id="typewriter5" class="hidden">
     <% recent_track1 = @recently_played.sample %>
     <% delete_element(@most_underground, recent_track1.album.artists[0]) %>
 
@@ -121,6 +118,10 @@
   </section>
 
   <%= render 'shared/stats_final' %>
+
+  <div id="typing_indicator1" class="hidden">
+    <%= render 'shared/typing_indicator' %>
+  </div>
 
 
 <% end %>
