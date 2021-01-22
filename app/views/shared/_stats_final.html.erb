@@ -4,6 +4,8 @@
 
 <section id="allezla" class="hidden">
 <br>
+  <p>Alors zéparti zéparti</p>
+<br>
   <p>Des grand.e.s artistes te remercient d'autant les écouter : </p>
   <ul class="list-inside list-disc pl-6">
     <% @top_artists[0..4].each_with_index do |artist, i| %>
@@ -42,7 +44,7 @@
   </ul>
 <br>
   <p>Y'a aussi ces quelques sons, si tu continues à autant les écouter</p>
-  <p>Ils finiront forcément par <span class="text-peach">décoller</span> !</p>
+  <p>ils finiront forcément par <span class="text-peach">décoller</span> !</p>
   <ul class="list-inside list-disc pl-6">
     <% @underground_tracks[0..4].each do |song| %>
       <% if song.popularity < 51 && song.popularity != 0%>
@@ -65,11 +67,11 @@
   <p>Quant à moi, ma <span class="text-baby-blue">mission</span> s'arrête ici</p>
   <% time_end = Time.now %>
   <p>J'ai passé <span class="font-bold text-lavander"><%= ((time_end - @time_begin) * 10000).round %></span> délicieuses millisecondes à analyser les statistiques de ton Spotify !</p>
-  <p><span class="text-xl"><span class="text-lavander">M</span><span class="text-lilac">e</span><span class="text-peach">r</span><span class="text-coral">c</span><span class="text-apricot">i</span></span> pour ce moment</p>
+  <p><span class="text-xl"><span class="text-lavander">M</span><span class="text-lilac">e</span><span class="text-peach">r</span><span class="text-coral">c</span><span class="text-apricot">i</span></span> pour ce moment ✨</p>
 <br>
   <p>J'espère que tu as également apprécié ma <em>compagnie</em></p>
   <p>N'hésite pas à me partager avec des copains si tu as <em>aimé</em> l'expérience !</p>
 <br>
-  <p>Bonne journée, prends soin de toi</p>
+  <p>Bonne journée, prends soin de toi 🍀</p>
   <p class="text-xl"><span class="text-pea">B</span><span class="text-baby-blue">i</span><span class="text-lavander">s</span><span class="text-lilac">o</span><span class="text-peach">u</span><span class="text-coral">s</span> <span class="text-apricot">à</span> <span class="text-pea">t</span><span class="text-baby-blue">o</span><span class="text-lavander">i</span></p>
 </section>

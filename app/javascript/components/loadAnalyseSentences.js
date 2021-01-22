@@ -6,7 +6,7 @@ const loadAnalyseSentences = (num) => {
   if (document.querySelector(`#typewriter${num}`) === null)
     return
   const type = new TypeIt(`#typewriter${num}`, {
-    speed: 1,
+    speed: 40,
     loop: false,
     waitUntilVisible: true,
     breakLines: true,
@@ -96,6 +96,8 @@ const answerBad = () => {
   .type("Gros courage")
   .break({delay: 200})
   .type("En attendant, j'espère pouvoir t'apporter un peu de joie en analysant ton compte")
+  .break({delay: 200})
+  .type("Allez, on y va !")
   .go();
 };
 
