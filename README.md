@@ -1,4 +1,4 @@
-# README
+# Welcome!
 
 You want to know how good is your Spotify ?
 You need approval for your musical taste ?
