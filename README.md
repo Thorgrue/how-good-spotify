@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You want to know how good is your Spotify ?
+You need approval for your musical taste ?
 
-Things you may want to cover:
+Here you are : https://how-good-is-your-spotify.herokuapp.com/
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Have a nice time.
