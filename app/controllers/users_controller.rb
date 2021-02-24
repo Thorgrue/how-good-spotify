@@ -23,6 +23,8 @@ class UsersController < ApplicationController
 
   def set_stats
     @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    # player = @spotify_user.player
+    # player.volume(50)
 
     @name = @spotify_user.display_name
 
